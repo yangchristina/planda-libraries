@@ -1,0 +1,23 @@
+{
+  "name": "planda-libraries",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "sites/*"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@macaron-css/core": "^1.2.0",
+    "@macaron-css/react": "^1.4.0"
+  }
+}
