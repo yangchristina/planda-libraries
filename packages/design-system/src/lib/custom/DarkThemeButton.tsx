@@ -3,8 +3,7 @@ import { Button } from '@radix-ui/themes';
 import { useTheme } from 'next-themes';
 import getNextTheme, { isDarkTheme } from
 
-export function DarkThemeButton() {
-  // const [theme, setTheme] = React.useState('theme-default');
+const DarkThemeButton = () => {
   const { theme, setTheme } = useTheme();
 
   return (
@@ -16,3 +15,5 @@ export function DarkThemeButton() {
     </Button>
   );
 }
+
+export default DarkThemeButton
