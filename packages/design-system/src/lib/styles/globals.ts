@@ -82,5 +82,6 @@ export const globalStyles: Record<string, Record<string, number | string | CssIn
 }
 
 Object.entries(vars).forEach(([key, value]) => {
+    // @ts-expect-error
     globalStyle(key, value);
 })
