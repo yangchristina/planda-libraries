@@ -7,6 +7,8 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@macaron-css/core": "^1.2.0",
+        "@macaron-css/react": "^1.4.0",
         "react": "^18.x",
         "react-dom": "^18.x"
     },
@@ -33,14 +35,22 @@
     "module": "./dist/design-system.es.js",
     "exports": {
         ".": {
-            "import": {
-                "types": "./dist/types/index.d.ts",
-                "default": "./dist/module.mjs"
-            },
-            "require": {
-                "types": "./dist/types/index.d.ts",
-                "default": "./dist/main.cjs"
-            }
+            "types": "./dist/index.d.ts",
+            "require": "./dist/index.js",
+            "main": "./dist/index.mjs",
+            "module": "./dist/index.mjs",
+            "import": "./dist/index.mjs"
+        },
+        "./*": {
+            "types": "./dist/*.d.ts",
+            "require": "./dist/*.js",
+            "main": "./dist/*.js",
+            "module": "./dist/*.mjs",
+            "import": "./dist/*.mjs"
+        },
+        "./dist/index.css": {
+            "import": "./dist/index.css",
+            "require": "./dist/index.css"
         }
     },
     "types": "./dist/types/index.d.ts",

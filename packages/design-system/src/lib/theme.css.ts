@@ -1,6 +1,6 @@
 import { createGlobalTheme, createTheme, createThemeContract } from '@macaron-css/core';
-import { ColorTheme, ColorBase, createThemeValue } from './utils/radixColors';
-import { createAllThemes, mapObject, toProviderThemes } from './utils';
+import { ColorTheme, ColorBase, createThemeValue } from '../utils/radixColors';
+import { createAllThemes, mapObject, toProviderThemes } from '../utils';
 
 const splitThemeContractTwelve = (primary: string) => {
     const obj: Record<string, null> = {}
