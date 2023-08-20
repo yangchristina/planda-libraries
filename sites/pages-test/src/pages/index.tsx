@@ -1,3 +1,4 @@
+import { Box, Button, ThemePanel } from "@radix-ui/themes";
 
 function Home() {
   const demoItems = [

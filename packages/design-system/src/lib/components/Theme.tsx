@@ -10,6 +10,7 @@ const themeKeyToRadixConfig = (themeName: string | undefined): ThemeProps | unde
     if (!themeName) return undefined
     const config = allThemeConfigs[themeName]
     let appearance: 'light' | 'dark' = config.isLight ? 'light' : 'dark'
+    // @ts-expect-error
     let accentColor = themeName in config ? config[themeName] : themeName
     let grayColor = config.gray
     return { appearance, accentColor, grayColor } as ThemeProps

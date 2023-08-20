@@ -13,26 +13,29 @@ export const Separator = styled(SeparatorPrimitive.Root, {
   variants: {
     size: {
       '1': {
-        '&[data-orientation="horizontal"]': {
-          height: '1px',
-          width: '$3',
-        },
-
-        '&[data-orientation="vertical"]': {
-          width: '1px',
-          height: '$3',
-        },
+        selectors: {
+          '&[data-orientation="horizontal"]': {
+            height: '1px',
+            width: '$3',
+          },
+          '&[data-orientation="vertical"]': {
+            width: '1px',
+            height: '$3',
+          },
+        }
       },
       '2': {
-        '&[data-orientation="horizontal"]': {
-          height: '1px',
-          width: '$7',
-        },
+        selectors: {
+          '&[data-orientation="horizontal"]': {
+            height: '1px',
+            width: '$7',
+          },
 
-        '&[data-orientation="vertical"]': {
-          width: '1px',
-          height: '$7',
-        },
+          '&[data-orientation="vertical"]': {
+            width: '1px',
+            height: '$7',
+          },
+        }
       },
     },
   },

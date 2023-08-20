@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "design-system": "*",
-  },
+    "@radix-ui/themes": "^1.0.0",
+    "design-system": "*"
+  }
 }

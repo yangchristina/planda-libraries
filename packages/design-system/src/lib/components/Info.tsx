@@ -2,7 +2,7 @@
 /**
  * Author: Christina Yang
  */
-import { Tooltip } from './Tooltip'
+import { Tooltip } from "./Tooltip"
 import { InfoCircledIcon } from '@radix-ui/react-icons'
 
 export const Info = ({ text, style }: { text: string, style?: any }) => {
