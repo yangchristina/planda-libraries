@@ -1,7 +1,8 @@
 import { globalStyle } from "@macaron-css/core";
 import { vars } from "./theme.css";
 
-export const globalStyles: Record<string, Record<string, number | string>> = {
+type CssInJS = Record<string, number | string>
+export const globalStyles: Record<string, Record<string, number | string | CssInJS>> = {
     '*': {
         margin: 0,
         padding: 0,
@@ -56,7 +57,7 @@ export const globalStyles: Record<string, Record<string, number | string>> = {
         letterSpacing: 0.8,
         boxSizing: 'border-box',
         background: '$overlayB11',
-        '&:focus': {
+        ':focus': {
             // border: '$focus',
             outline: 'none !important',
             // border: '1px solid red',. .
