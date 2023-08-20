@@ -114,71 +114,84 @@ function SubContent(props: any) {
 }
 
 const itemStyles = {
-  all: 'unset',
-  fontSize: 13,
-  lineHeight: 1,
-  color: vars.color.primary11,
-  borderRadius: 3,
-  display: 'flex',
-  alignItems: 'center',
-  height: 25,
-  padding: '0 5px',
-  position: 'relative',
-  paddingLeft: 25,
-  userSelect: 'none',
+  base: {
+    all: 'unset',
+    fontSize: 13,
+    lineHeight: 1,
+    color: vars.color.primary11,
+    borderRadius: 3,
+    display: 'flex',
+    alignItems: 'center',
+    height: 25,
+    padding: '0 5px',
+    position: 'relative',
+    paddingLeft: 25,
+    userSelect: 'none',
 
+    selectors: {
+      '&[data-disabled]': {
+        color: '$gray8',
+        pointerEvents: 'none',
+      },
+
+      '&[data-highlighted]': {
+        backgroundColor: vars.color.primary9,
+        color: vars.color.primary1,
+      },
+    }
+  }
+} as const;
+
+const StyledItem = styled(ContextMenuPrimitive.Item, itemStyles);
+const StyledCheckboxItem = styled(ContextMenuPrimitive.CheckboxItem, itemStyles);
+const StyledRadioItem = styled(ContextMenuPrimitive.RadioItem, itemStyles);
+const StyledSubTrigger = styled(ContextMenuPrimitive.SubTrigger, merge(itemStyles, {
   selectors: {
-    '&[data-disabled]': {
-      color: '$gray8',
-      pointerEvents: 'none',
-    },
-
-    '&[data-highlighted]': {
-      backgroundColor: '$primary9',
-      color: '$primary1',
+    '&[data-state="open"]': {
+      backgroundColor: vars.color.primary4,
+      color: vars.color.primary11,
     },
   }
-};
-
-const StyledItem = styled(ContextMenuPrimitive.Item, { base: itemStyles });
-const StyledCheckboxItem = styled(ContextMenuPrimitive.CheckboxItem, { base: itemStyles });
-const StyledRadioItem = styled(ContextMenuPrimitive.RadioItem, { base: itemStyles });
-const StyledSubTrigger = styled(ContextMenuPrimitive.SubTrigger, {
-  '&[data-state="open"]': {
-    backgroundColor: '$primary4',
-    color: '$primary11',
-  },
-  ...itemStyles,
-});
+}));
 
 const StyledLabel = styled(ContextMenuPrimitive.Label, {
-  paddingLeft: 25,
-  fontSize: 12,
-  lineHeight: '25px',
-  color: '$gray11',
+  base: {
+    paddingLeft: 25,
+    fontSize: 12,
+    lineHeight: '25px',
+    color: '$gray11',
+  }
 });
 
 const StyledSeparator = styled(ContextMenuPrimitive.Separator, {
-  height: 1,
-  backgroundColor: '$primary6',
-  margin: 5,
+  base: {
+    height: 1,
+    backgroundColor: '$primary6',
+    margin: 5,
+  }
 });
 
 const StyledItemIndicator = styled(ContextMenuPrimitive.ItemIndicator, {
-  position: 'absolute',
-  left: 0,
-  width: 25,
-  display: 'inline-flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  base: {
+    position: 'absolute',
+    left: 0,
+    width: 25,
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 });
 
 export const RightSlot = styled('div', {
-  marginLeft: 'auto',
-  paddingLeft: 20,
-  color: '$gray11',
-  '[data-highlighted] > &': { color: 'white' },
-  '[data-disabled] &': { color: '$gray8' },
+  base: {
+    marginLeft: 'auto',
+    paddingLeft: 20,
+    color: '$gray11',
+    selectors: {
+      '[data-highlighted] > &': { color: 'white' },
+      '[data-disabled] &': { color: '$gray8' },
+    }
+  }
 });
 
 // Exports
