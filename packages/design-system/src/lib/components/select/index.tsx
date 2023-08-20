@@ -2,11 +2,11 @@
 /**
  * Author: Christina Yang
  */
-import React, { ComponentProps, Fragment } from 'react'
+import { ComponentProps, ElementRef, Fragment, forwardRef } from 'react'
 import * as SelectPrimitive from '@radix-ui/react-select';
 import Trigger from './components/Trigger';
 import Item, { ItemButton } from './components/Item';
-import { styled } from '../../stitches.config';
+import { styled } from '@macaron-css/react';
 import Content from './components/Content';
 import { isStringArray } from '../../utils';
 
@@ -29,15 +29,19 @@ export type ContentUnit = SelectGroup | SelectItem | SelectButton
 
 const SelectGroupEl = styled(SelectPrimitive.Group, {})
 const Separator = styled(SelectPrimitive.Separator, {
-    height: 1,
-    backgroundColor: '$gray6',
-    margin: 5,
+    base: {
+        height: 1,
+        backgroundColor: '$gray6',
+        margin: 5,
+    }
 });
 const GroupLabel = styled(SelectPrimitive.Label, {
-    padding: '0 25px',
-    fontSize: 12,
-    lineHeight: '25px',
-    color: '$gray11',
+    base: {
+        padding: '0 25px',
+        fontSize: 12,
+        lineHeight: '25px',
+        color: '$gray11',
+    }
 });
 
 function handleType(obj: ContentUnit | ContentUnit[]): JSX.Element {
@@ -76,7 +80,7 @@ type SelectProps = {
  * @returns
  */
 
-export const Select = React.forwardRef<React.ElementRef<typeof SelectPrimitive.Root>, SelectProps>(
+export const Select = forwardRef<ElementRef<typeof SelectPrimitive.Root>, SelectProps>(
     ({ placeholder = 'Select a category', data, value, onChange, error, allowSelectNone = false, noneValue = '/', color, ...props }, forwardedRef) => {
         const noCategoryItem: ContentUnit = {
             type: 'item',

@@ -1,9 +1,10 @@
 'use client';
-import React, { ComponentProps } from 'react'
-import { styled } from '../../../stitches.config';
+import { ComponentProps } from 'react'
+import { styled } from '@macaron-css/react';
 import { SelectTrigger, Value, SelectIcon } from '@radix-ui/react-select';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import { selectColorVariants } from "../styles";
+import { vars } from '../../../styles/theme.css';
 
 type TriggerProps = ComponentProps<typeof SelectTrigger>
 const Trigger = ({ placeholder = 'Select a category', error = false, ...props }: { placeholder?: string, error?: boolean } & TriggerProps) => {
@@ -21,28 +22,31 @@ const Trigger = ({ placeholder = 'Select a category', error = false, ...props }:
 export default Trigger
 
 const StyledTrigger = styled(SelectTrigger, {
-    all: 'unset',
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 4,
-    padding: '0 15px',
-    fontSize: 13,
-    lineHeight: 1,
-    height: 35,
-    gap: 5,
-    backgroundColor: '$loContrast',
-    boxShadow: '$border',
-    color: '$primary12',
-    // boxShadow: `0px 0px 3px $colors$gray8`,
-    // boxShadow: '$boxShadow',
-    '&:hover': { backgroundColor: '$gray3' },
-    '&:focus': { boxShadow: `$focus` },
-    '&[data-placeholder]': { color: '$gray12' },
+    base: {
+        all: 'unset',
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 4,
+        padding: '0 15px',
+        fontSize: 13,
+        lineHeight: 1,
+        height: 35,
+        gap: 5,
+        backgroundColor: vars.color.loContrast ,
+        boxShadow: '$border',
+        color: '$primary12',
+        // boxShadow: `0px 0px 3px $colors$gray8`,
+        // boxShadow: '$boxShadow',
+        gridArea: 'category',
 
-    gridArea: 'category',
-
-    border: '$boxShadow',
+        border: '$boxShadow',
+        selectors: {
+            '&:hover': { backgroundColor: '$gray3' },
+            '&:focus': { boxShadow: `$focus` },
+            '&[data-placeholder]': { color: '$gray12' },
+        }
+    },
 
     variants: {
         ...selectColorVariants,

@@ -1,21 +1,24 @@
 'use client';
-import React from 'react'
 import * as SelectPrimitive from '@radix-ui/react-select';
-import { styled } from '../../../stitches.config';
+import { styled } from '@macaron-css/react';
 import { ChevronUpIcon, ChevronDownIcon } from '@radix-ui/react-icons';
 
 const SelectViewport = styled(SelectPrimitive.Viewport, {
-    padding: 5,
+    base: {
+        padding: 5,
+    }
 });
 
 const SelectContent = styled(SelectPrimitive.Content, {
-    overflow: 'hidden',
-    backgroundColor: '$gray1',
-    borderRadius: 6,
-    zIndex: 1000,
-    boxShadow:
-        '0px 10px 25px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
-    border: '1px solid $overlay7',
+    base: {
+        overflow: 'hidden',
+        backgroundColor: '$gray1',
+        borderRadius: 6,
+        zIndex: 1000,
+        boxShadow:
+            '0px 10px 25px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
+        border: '1px solid $overlay7',
+    }
 });
 
 const scrollButtonStyles = {
@@ -28,9 +31,9 @@ const scrollButtonStyles = {
     cursor: 'default',
 };
 
-const SelectScrollUpButton = styled(SelectPrimitive.ScrollUpButton, scrollButtonStyles);
+const SelectScrollUpButton = styled(SelectPrimitive.ScrollUpButton, { base: scrollButtonStyles });
 
-const SelectScrollDownButton = styled(SelectPrimitive.ScrollDownButton, scrollButtonStyles);
+const SelectScrollDownButton = styled(SelectPrimitive.ScrollDownButton, { base: scrollButtonStyles });
 
 
 const Content = ({ children }: { children: JSX.Element, }) => {

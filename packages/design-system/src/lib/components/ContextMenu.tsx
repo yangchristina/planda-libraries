@@ -3,7 +3,7 @@ import * as ContextMenuPrimitive from '@radix-ui/react-context-menu';
 import { styled } from '@macaron-css/react';
 import { ChevronRightIcon } from '@radix-ui/react-icons';
 import { vars } from '../styles/theme.css';
-
+import { merge } from 'lodash'
 /**
  * generic context menu:
  * takes in units: Unit[] for layout
