@@ -16,8 +16,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@macaron-css/core": "^1.2.0",
-    "@macaron-css/react": "^1.4.0"
+  "devDependencies": {
+    "typescript": "^4.9.4"
   }
 }
