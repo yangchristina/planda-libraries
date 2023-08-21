@@ -1,33 +1,36 @@
-// import { macaronVitePlugin } from '@macaron-css/vite';
+import { macaronVitePlugin } from '@macaron-css/vite';
 import react from '@vitejs/plugin-react';
-import path from 'node:path';
 import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
+// import dts from 'vite-plugin-dts';
 
 export default defineConfig({
     plugins: [
-        // macaronVitePlugin(),
         react(),
-        dts({
-            insertTypesEntry: true,
-        }),
+        // @ts-expect-error
+        macaronVitePlugin(),
+        // dts({
+        //     insertTypesEntry: true,
+        // }),
     ],
-    build: {
-        lib: {
-            entry: path.resolve(__dirname, 'index.ts'),
-            name: 'design-system',
-            formats: ['es', 'umd'],
-            fileName: (format) => `design-system.${format}.js`,
-        },
-        // rollupOptions: {
-        //     // external: ['react', 'react-dom', 'styled-components'],
-        //     output: {
-        //         globals: {
-        //             react: 'React',
-        //             'react-dom': 'ReactDOM',
-        //             // 'styled-components': 'styled',
-        //         },
-        //     },
-        // },
+    esbuild: {
+        jsxInject: `import React from 'react'`,
     },
+    // build: {
+    //     lib: {
+    //         entry: path.resolve(__dirname, 'index.ts'),
+    //         name: 'design-system',
+    //         formats: ['es', 'umd'],
+    //         fileName: (format) => `design-system.${format}.js`,
+    //     },
+    //     // rollupOptions: {
+    //     //     // external: ['react', 'react-dom', 'styled-components'],
+    //     //     output: {
+    //     //         globals: {
+    //     //             react: 'React',
+    //     //             'react-dom': 'ReactDOM',
+    //     //             // 'styled-components': 'styled',
+    //     //         },
+    //     //     },
+    //     // },
+    // },
 });
