@@ -21,6 +21,9 @@ const specific = createThemeContract({
         ...splitThemeContractTwelve('info'),
         ...splitThemeContractTwelve('warning'),
         ...splitThemeContractTwelve('overlay'),
+        primary1: null,
+        loContrast: null,
+        hiContrast: null,
     },
 });
 

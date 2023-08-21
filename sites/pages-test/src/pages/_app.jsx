@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import '../styles.css';
-import { DesignSystemProvider } from '../components/DesignSystemProvider';
+import { DesignSystemProvider } from '../../../../packages/design-system/src/lib/components/DesignSystemProvider'
 import '@radix-ui/themes/styles.css';
 
 function App({ Component, pageProps }) {

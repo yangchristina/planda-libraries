@@ -13,5 +13,3 @@ export default function getNextTheme(theme = '', inc = 1, type?: 'light' | 'dark
 export const isDarkTheme = (theme: string | undefined) => {
     return !!theme?.toLowerCase().includes('dark')
 }
-
-const toThemeKey = (key: string) => key.replaceAll(" ", '-') + '-theme'

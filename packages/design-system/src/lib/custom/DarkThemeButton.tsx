@@ -1,7 +1,7 @@
 "use client"
 import { Button } from '@radix-ui/themes';
 import { useTheme } from 'next-themes';
-import getNextTheme, { isDarkTheme } from
+import getNextTheme, { isDarkTheme } from '../utils/theme';
 
 const DarkThemeButton = () => {
   const { theme, setTheme } = useTheme();
