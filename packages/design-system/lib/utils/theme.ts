@@ -1,4 +1,4 @@
-import { themes } from "../styles/theme.css"
+import { themes } from "../styles/theme"
 import { mod } from "./math"
 
 export default function getNextTheme(theme = '', inc = 1, type?: 'light' | 'dark') {

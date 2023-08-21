@@ -1,6 +1,7 @@
 import { createGlobalTheme, createThemeContract } from '@macaron-css/core';
 import { ColorTheme, ColorBase, createThemeValue } from '../utils/radixColors';
 import { createAllThemes, mapObject, toProviderThemes } from '../utils';
+import { merge } from 'lodash';
 
 const splitThemeContractTwelve = (primary: string) => {
     const obj: Record<string, null> = {}
@@ -11,19 +12,118 @@ const splitThemeContractTwelve = (primary: string) => {
 }
 
 const specific = createThemeContract({
-    color: {
-        ...splitThemeContractTwelve('primary'),
-        ...splitThemeContractTwelve('secondary'),
+    colors: {
         ...splitThemeContractTwelve('accent'),
-        ...splitThemeContractTwelve('gray'),
-        ...splitThemeContractTwelve('error'),
-        ...splitThemeContractTwelve('success'),
-        ...splitThemeContractTwelve('info'),
-        ...splitThemeContractTwelve('warning'),
-        ...splitThemeContractTwelve('overlay'),
-        primary1: null,
         loContrast: null,
         hiContrast: null,
+
+        primary1: null,
+        primary2: null,
+        primary3: null,
+        primary4: null,
+        primary5: null,
+        primary6: null,
+        primary7: null,
+        primary8: null,
+        primary9: null,
+        primary10: null,
+        primary11: null,
+        primary12: null,
+
+        secondary1: null,
+        secondary2: null,
+        secondary3: null,
+        secondary4: null,
+        secondary5: null,
+        secondary6: null,
+        secondary7: null,
+        secondary8: null,
+        secondary9: null,
+        secondary10: null,
+        secondary11: null,
+        secondary12: null,
+
+        accent1: null,
+        accent2: null,
+        accent3: null,
+
+        gray1: null,
+        gray2: null,
+        gray3: null,
+        gray4: null,
+        gray5: null,
+        gray6: null,
+        gray7: null,
+        gray8: null,
+        gray9: null,
+        gray10: null,
+        gray11: null,
+        gray12: null,
+
+        error1: null,
+        error2: null,
+        error3: null,
+        error4: null,
+        error5: null,
+        error6: null,
+        error7: null,
+        error8: null,
+        error9: null,
+        error10: null,
+        error11: null,
+        error12: null,
+
+        success1: null,
+        success2: null,
+        success3: null,
+        success4: null,
+        success5: null,
+        success6: null,
+        success7: null,
+        success8: null,
+        success9: null,
+        success10: null,
+        success11: null,
+        success12: null,
+
+        info1: null,
+        info2: null,
+        info3: null,
+        info4: null,
+        info5: null,
+        info6: null,
+        info7: null,
+        info8: null,
+        info9: null,
+        info10: null,
+        info11: null,
+        info12: null,
+
+        warning1: null,
+        warning2: null,
+        warning3: null,
+        warning4: null,
+        warning5: null,
+        warning6: null,
+        warning7: null,
+        warning8: null,
+        warning9: null,
+        warning10: null,
+        warning11: null,
+        warning12: null,
+
+        overlay1: null,
+        overlay2: null,
+        overlay3: null,
+        overlay4: null,
+        overlay5: null,
+        overlay6: null,
+        overlay7: null,
+        overlay8: null,
+        overlay9: null,
+        overlay10: null,
+        overlay11: null,
+        overlay12: null,
     },
 });
 
@@ -144,30 +244,31 @@ export const providerThemes = toProviderThemes(createdThemes)
 //#region global themes
 const config = {
     colors: {
-        text: specific.color.primary12,
-        outline: specific.color.primary12,
-        outlineHover: specific.color.gray12,
+        text: specific.colors.primary12,
+        outline: specific.colors.primary12,
+        outlineHover: specific.colors.gray12,
 
-        unimportant: specific.color.gray11,
-        important: specific.color.primary11,
-        highlight: specific.color.warning9,
+        unimportant: specific.colors.gray11,
+        important: specific.colors.primary11,
+        highlight: specific.colors.warning9,
 
         canvas: 'hsl(0 0% 93%)',
-        panel: specific.color.loContrast,
+        panel: specific.colors.loContrast,
         shadowLight: 'hsl(206 22% 7% / 35%)',
         shadowDark: 'hsl(206 22% 7% / 20%)',
+        transparentExtreme: specific.colors.accent3 // NO IDEA WHAT VALUE FOR THIS
     },
     fonts: {
         untitled: 'Untitled Sans, -apple-system, system-ui, sans-serif',
         mono: 'Söhne Mono, menlo, monospace',
     },
     shadows: {
-        border: `0 0 0 calc(1px / var(--scale-x, 1)) ${specific.color.overlay8}`,
-        borderHiContrast: `0 0 0 calc(1px / var(--scale-x, 1)) ${specific.color.overlay12}`,
+        border: `0 0 0 calc(1px / var(--scale-x, 1)) ${specific.colors.overlay8}`,
+        borderHiContrast: `0 0 0 calc(1px / var(--scale-x, 1)) ${specific.colors.overlay12}`,
         common: `0 1px calc(3px / var(--scale-x, 1)) 0 rgba(34, 33, 81, 0.15)`,
         boxShadow: `$border, $common`,
-        error: `0px 0px 3px ${specific.color.error11}`,
-        success: `0px 0px 3px ${specific.color.success11}`,
+        error: `0px 0px 3px ${specific.colors.error11}`,
+        success: `0px 0px 3px ${specific.colors.success11}`,
         // Should focus be info or secondary?
         focus: `0 0 0 2px $colors$info7`, // or if want gray focus: `0 0 0 2px $colors$gray7`
         focusBottom: `0 2px 0px 0px $colors$info7`,
@@ -271,4 +372,4 @@ const config = {
 const root = createGlobalTheme(':root', config);
 //#endregion
 
-export const vars = { ...root, ...specific };
+export const vars = { ...merge({}, root, specific) };

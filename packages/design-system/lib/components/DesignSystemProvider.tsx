@@ -1,7 +1,7 @@
 "use client"
 import { TooltipProvider } from '@radix-ui/react-tooltip';
 import { ThemeProvider } from 'next-themes';
-import { providerThemes } from '../styles/theme.css';
+import { providerThemes } from '../styles/theme';
 
 type TooltipProviderProps = React.ComponentProps<typeof TooltipProvider>;
 interface DesignSystemProviderProps extends TooltipProviderProps {

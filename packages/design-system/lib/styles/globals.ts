@@ -1,5 +1,5 @@
 import { globalStyle } from "@macaron-css/core";
-import { vars } from "./theme.css";
+import { vars } from "./theme";
 
 type CssInJS = Record<string, number | string>
 export const globalStyles: Record<string, Record<string, number | string | CssInJS>> = {

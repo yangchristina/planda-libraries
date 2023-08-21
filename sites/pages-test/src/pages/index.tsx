@@ -1,6 +1,6 @@
 import { Box, Button, Container, Flex, Grid, Heading, Section, Separator, ThemePanel } from "@radix-ui/themes";
-import { AppBar, ContextMenu, DarkThemeButton, Select } from 'design-system/src/lib'
-import { vars } from "design-system/src/lib/styles/theme.css";
+import { AppBar, ContextMenu, DarkThemeButton, Select } from 'design-system/lib'
+import { vars } from "design-system/src/lib/styles/theme";
 import { ResetIcon } from '@radix-ui/react-icons'
 
 function Home() {
@@ -148,7 +148,7 @@ function Home() {
       </Box>
       {/* #endregion nav */}
 
-      <Box style={{ backgroundColor: vars.color.loContrast, height: '100%', marginInline: '150px' }}>
+      <Box style={{ backgroundColor: vars.colors.loContrast, height: '100%', marginInline: '150px' }}>
         {
           demoItems.map(item => {
             return (

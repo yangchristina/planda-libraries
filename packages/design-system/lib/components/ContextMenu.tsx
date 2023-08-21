@@ -2,7 +2,7 @@
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu';
 import { styled } from '@macaron-css/react';
 import { ChevronRightIcon } from '@radix-ui/react-icons';
-import { vars } from '../styles/theme.css';
+import { vars } from '../styles/theme';
 import { merge } from 'lodash'
 /**
  * generic context menu:
@@ -118,7 +118,7 @@ const itemStyles = {
     all: 'unset',
     fontSize: 13,
     lineHeight: 1,
-    color: vars.color.primary11,
+    color: vars.colors.primary11,
     borderRadius: 3,
     display: 'flex',
     alignItems: 'center',
@@ -135,8 +135,8 @@ const itemStyles = {
       },
 
       '&[data-highlighted]': {
-        backgroundColor: vars.color.primary9,
-        color: vars.color.primary1,
+        backgroundColor: vars.colors.primary9,
+        color: vars.colors.primary1,
       },
     }
   }
@@ -148,8 +148,8 @@ const StyledRadioItem = styled(ContextMenuPrimitive.RadioItem, itemStyles);
 const StyledSubTrigger = styled(ContextMenuPrimitive.SubTrigger, merge(itemStyles, {
   selectors: {
     '&[data-state="open"]': {
-      backgroundColor: vars.color.primary4,
-      color: vars.color.primary11,
+      backgroundColor: vars.colors.primary4,
+      color: vars.colors.primary11,
     },
   }
 }));

@@ -4,7 +4,7 @@ import { styled } from '@macaron-css/react';
 import { SelectTrigger, Value, SelectIcon } from '@radix-ui/react-select';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import { selectColorVariants } from "../styles";
-import { vars } from '../../../styles/theme.css';
+import { vars } from '../../../styles/theme';
 
 type TriggerProps = ComponentProps<typeof SelectTrigger>
 const Trigger = ({ placeholder = 'Select a category', error = false, ...props }: { placeholder?: string, error?: boolean } & TriggerProps) => {
@@ -33,7 +33,7 @@ const StyledTrigger = styled(SelectTrigger, {
         lineHeight: 1,
         height: 35,
         gap: 5,
-        backgroundColor: vars.color.loContrast ,
+        backgroundColor: vars.colors.loContrast ,
         boxShadow: '$border',
         color: '$primary12',
         // boxShadow: `0px 0px 3px $colors$gray8`,

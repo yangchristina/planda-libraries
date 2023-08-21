@@ -1,6 +1,7 @@
 "use client"
 import { styled } from "@macaron-css/react";
 
+// @ts-expect-error
 export const AppBar = styled('div', {
   base: {
     boxSizing: 'border-box',

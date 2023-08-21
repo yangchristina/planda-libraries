@@ -3,7 +3,7 @@ import { styled } from '@macaron-css/react';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import { Box } from '@radix-ui/themes';
 import { Text } from '@radix-ui/themes';
-import { vars } from '../styles/theme.css';
+import { vars } from '../styles/theme';
 
 type TooltipPrimitiveProps = React.ComponentProps<typeof TooltipPrimitive.Root>;
 type TooltipProps = TooltipPrimitiveProps &
@@ -51,13 +51,13 @@ export function Tooltip({
             size="1"
             as="p"
             style={{
-              color: vars.color.loContrast,
+              color: vars.colors.loContrast,
               lineHeight: multiline ? '20px' : (undefined as any),
             }}
           >
             {content}
           </Text>
-          <Box style={{ color: vars.color.transparentExtreme }}>
+          <Box style={{ color: vars.colors.transparentExtreme }}>
             <TooltipPrimitive.Arrow width={11} height={5} style={{ fill: 'currentColor' }} />
           </Box>
         </StyledContent>
