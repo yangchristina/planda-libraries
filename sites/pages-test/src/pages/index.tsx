@@ -1,5 +1,5 @@
 import { Box, Button, Container, Flex, Grid, Heading, Section, Separator, ThemePanel } from "@radix-ui/themes";
-import { AppBar, ContextMenu, DarkThemeButton, Select } from 'design-system/lib'
+import { AppBar, ContextMenu, DarkThemeButton, Select } from 'design-system'
 import { vars } from "design-system/src/lib/styles/theme";
 import { ResetIcon } from '@radix-ui/react-icons'
 
